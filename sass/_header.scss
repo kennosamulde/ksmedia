@@ -1,0 +1,126 @@
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: min-content;
+
+    &__main {
+        grid-row: 1 / 2;
+        top: 5rem;
+        position: fixed;
+        left: 3rem;
+        z-index: 10;
+
+        @media only screen and (max-width: $bp-medium) {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &__logo {
+            height: auto;
+            max-width: 3vh;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: fixed;
+        top: 47%;
+        left: 2.5rem;
+        z-index: 20;
+
+        @media only screen and (max-width: $bp-medium) {
+            left: 0;
+            padding: 0 calc(8vw / 2 - 8px);
+        }
+
+        &:hover &__menu {
+            color: $color-primary-light;
+        }
+
+        &__menu {
+            color: $color-grey-light-1;
+            text-decoration: none;
+            margin: .5rem 0 0 1rem;
+            font-size: 1.1rem;
+            letter-spacing: .1rem;
+            transition: color .2s;
+
+            @media only screen and (max-width: $bp-large) {
+               display: none;
+            }
+        }
+
+        &__icon {
+            cursor: pointer;
+
+            &__main {
+                position: relative;
+                transform: rotate(90deg);
+            }
+
+            &__main,
+            &__main::before,
+            &__main::after {
+                width: 3rem;
+                height: 1.5px;
+                background-color: $color-grey-light-1;
+                display: inline-block;
+    
+                @media only screen and (max-width: $bp-medium) {
+                    width: 2rem;
+                }
+            }
+
+            &__main::before,
+            &__main::after {
+                content: "";
+                position: absolute;
+                top: 0;
+            }
+
+            &__main::before { top: .8rem; }
+            &__main::after { top: -.8rem; }
+        }
+    }
+
+    &__social {
+        grid-row: 3 / 4;
+        align-self: end;
+        position: fixed;
+        bottom: 5rem;
+        left: 3rem;
+        z-index: 10;
+
+        @media only screen and (max-width: $bp-medium) {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &__icons {
+            list-style: none;
+
+            li:not(:last-child) {
+                margin: 2rem 0;
+            }
+
+            li {
+                &:hover a {
+                    color: $color-primary-light;
+                }
+            }
+
+            a {
+                font-size: 1.4rem;
+                color: $color-grey-light-1;
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: .3rem;
+                transition: color .2s;
+            }
+        }
+    }
+}

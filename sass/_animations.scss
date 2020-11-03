@@ -1,0 +1,437 @@
+
+//////////////////////////////////////////////// Animate ///////////////////////////////////////
+
+@keyframes revBlock {
+
+    0% {
+         left: 0;
+         width: 0;
+    }
+    50% {
+         left: 0;
+         width: 100%;
+    }
+    100% {
+         left: 100%;
+         width: 0;
+    }
+}
+
+/////////////////// Body Animations //////////////////////////
+
+.js--b {
+    opacity: 0;
+}
+
+/////////////////// Navigation Animations //////////////////////////
+
+.js--nav {
+    visibility: hidden;
+}
+
+.js--navr {
+    width: 0;
+    transition: all 1s cubic-bezier(.78,0,.2,.89);
+}
+
+.js--navr.show {
+    width: 100%;
+}
+
+.js--navi {
+    transform: translateY(100%);
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.js--navi.show {
+    transform: translateY(0);
+}
+
+.js--ns {
+    opacity: 0;
+    transform: translateX(2rem);
+}
+
+/////////////////// Container Animations //////////////////////////
+
+.js--cl {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.js--cr {
+    height: 0%;
+}
+
+.js--cr.show {
+    height: 100%;
+}
+
+/////////////////// Video Animations //////////////////////////
+
+.js--hv {
+    transform: translateY(-100%);
+}
+
+/////////////////// Sidebar Animations //////////////////////////
+
+.js--sb {
+    opacity: 1;
+}
+
+.js--sb-m {
+    opacity: 1;
+}
+
+.js--ss {
+    opacity: 1;
+}
+
+.js--sb-mi {
+    transition: .3s;
+    &::before {
+       transition: .3s;
+    }
+    &::after {
+        transition: .3s;
+    }
+}
+
+.js--sb-mi.active {
+    background-color: transparent;
+    &::before {
+        transform: translateY(-.8rem) rotate(45deg);
+    }
+    &::after {
+        transform: translateY(.8rem) rotate(-45deg);
+    }
+}
+
+/////////////////// Sidebar Right Animations //////////////////////////
+
+.js--r {
+    opacity: 1;
+}
+
+/////////////////// Loader Animations //////////////////////////
+
+.js--lt {
+    transform: translate(0,100%);
+    position: relative;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.js--lt.show {
+    transform: translate(0,0);
+}
+
+/////////////////// Home Animations //////////////////////////
+
+.js--hi {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-dark;
+      z-index: 1;
+      transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.js--hi.show {
+        &::after {
+        left: 100%;
+    }
+}
+
+.js--hi-m {
+    transform: scale(1.2);
+    transition: transform cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.js--hi-m.scale {
+    transform: scale(1);
+}
+
+.js--h1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.js--h1-m {
+    opacity: 0;
+    transform: translate(0,100%);
+    position: relative;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.js--h1-m.show {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+/////////////////// About Animations //////////////////////////
+
+.js--ah-1,
+.js--ah-2 {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.js--ab {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.js--at,
+.js--at-2 {
+    opacity: 0;
+    transform: translateY(5rem);
+}
+
+.js--ai {
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-dark;
+      z-index: 2;
+      transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.js--ai.show {
+    &::after {
+        left: 100%;
+    }
+}
+
+.js--ai-m {
+    transform: scale(1.2);
+    transition: transform cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.js--ai-m.scale {
+    transform: scale(1);
+}
+
+/////////////////// Skills Animations //////////////////////////
+
+.js--sh {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.js--sbr-1, 
+.js--sbr-2,
+.js--sbr-3, 
+.js--sbr-4 {
+    opacity: 0;
+    width: 0;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.js--sh2-1, 
+.js--sh2-2, 
+.js--sh2-3, 
+.js--sh2-4 {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.js--sh5-1,
+.js--sp-1,
+.js--sh5-2,
+.js--sp-2, 
+.js--sh5-3,
+.js--sp-3, 
+.js--sh5-4,
+.js--sp-4 {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+/////////////////// Works Animations //////////////////////////
+
+.js--wba {
+    width: 0;
+}
+
+.js--wc-1,
+.js--wc-4 {
+    opacity: 0;
+}
+
+.js--wc-2,
+.js--wc-3,
+.js--wc-5,
+.js--wc-6 {
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-dark;
+      z-index: 1;
+      transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.js--wc-1.show,
+.js--wc-2.show,
+.js--wc-3.show,
+.js--wc-4.show,
+.js--wc-5.show,
+.js--wc-6.show {
+    &::after {
+        left: 100%;
+    }
+}
+
+.js--wi-1,
+.js--wi-2,
+.js--wi-3,
+.js--wi-4,
+.js--wi-5,
+.js--wi-6 {
+    transform: scale(1.2);
+    transition: transform cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.js--wi-1.scale,
+.js--wi-2.scale,
+.js--wi-3.scale,
+.js--wi-4.scale,
+.js--wi-5.scale,
+.js--wi-6.scale {
+    transform: scale(1);
+}
+
+.js--wh1,
+.js--wh2,
+.js--wpt {
+    transform: translate(0,100%);
+    position: relative;
+    opacity: 0;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.js--wh1.show,
+.js--wh2.show,
+.js--wpt.show {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.js--svg {
+    opacity: 0;
+    transform: rotate(90deg) translateX(-50%);
+}
+
+.js--wh2-1,
+.js--wh3-1,
+.js--wbtn-1,
+.js--wh2-2,
+.js--wh3-2,
+.js--wbtn-2,
+.js--wh2-3,
+.js--wh3-3,
+.js--wbtn-3,
+.js--wh2-4,
+.js--wh3-4,
+.js--wbtn-4,
+.js--wh2-5,
+.js--wh3-5,
+.js--wbtn-5,
+.js--wh2-6,
+.js--wh3-6,
+.js--wbtn-6 {
+    opacity: 0;
+    transform: translateY(10rem);
+}
+
+/////////////////// Contact Animations //////////////////////////
+
+.js--cb {
+    width: 0;
+}
+
+.js--ch4 {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.js--ch-1,
+.js--ch-2  {
+    transform: translate(0,100%);
+    position: relative;
+    opacity: 0;
+    transition: all 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.js--ch-1.show,
+.js--ch-2.show {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.js--cfi {
+    transform: translateY(200%);
+    opacity: 0;
+}
+
+.js--csvg {
+    opacity: 0;
+}
+
+/////////////////// Footer Animations //////////////////////////
+
+.js--fm {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.js--fs-1,
+.js--fs-2,
+.js--fs-3,
+.js--fs-4 {
+    opacity: 0;
+    transform: translatex(2rem);
+}
+
+.js--fc {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.js--fcr {
+    opacity: 0;
+    transform: translateX(2rem);
+}

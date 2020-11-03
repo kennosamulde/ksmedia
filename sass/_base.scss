@@ -1,0 +1,167 @@
+// COLOR VARIABLES
+
+$color-primary: #e7e7e7;
+$color-primary-dark: #690000;
+$color-primary-light: #8f8f8f;
+
+$color-grey-light-1: #e7e7e7;
+$color-grey-light-2: #161616;
+$color-grey-light-3: #0f0f0f;
+
+$color-dark:#070707;
+
+// FONT VARIABLES
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Monument Extended Reg', sans-serif;
+$font-tertiary: 'Monument Extended', sans-serif;
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('/fonts/MonumentExtended-Ultrabold.otf');
+}
+@font-face {
+    font-family: 'Monument Extended Reg';
+    src: url('/fonts/MonumentExtended-Regular.otf');
+}
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-larger: 100em;//1200
+$bp-large: 75em; //1000
+$bp-medium: 62.5em; //1000
+$bp-mediumer: 50em; // 800
+$bp-small: 37.5em; //600
+$bp-mobile: 28.125em; //450
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-larger) {
+        font-size: 60%;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 55%;
+    }
+}
+
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-light-1;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $color-dark;
+}
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $color-grey-light-1;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+select {
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+}
+
+.logo {
+    height: 100%;
+    width: 100%; 
+    z-index: 2010;
+
+    &__img {
+        margin-top: 5rem;
+        height: 3rem;
+        width: auto;
+        display: none;
+
+        @media only screen and (max-width: $bp-medium) {
+           display: block;
+           height: 3rem;
+        }
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 100vh repeat(5, min-content);
+    grid-template-columns: 15vw repeat(4, 1fr) 15vw;
+    z-index: -2000 !important;
+
+    @media only screen and (max-width: $bp-larger) {
+        grid-template-columns: 10vw repeat(4, 1fr) 10vw;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: 8vw repeat(4, minmax(min-content, 1fr)) 8vw;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: 8vw repeat(2, minmax(min-content, 1fr)) 8vw;
+    }
+    
+    &__rule {
+        display: block;
+        width: 100%;
+        height: 100%;
+        grid-row: 1 / -1;
+        background-color: $color-dark;
+      
+        &:not(:last-of-type) {
+            border-right: solid 1px $color-grey-light-2;
+        }
+
+        &__1 {
+            grid-column: 1 / 2;
+            z-index: 3;
+        }
+
+        &__2 {
+            grid-column: 2 / 3;
+        }
+
+        &__3 {
+            grid-column: 3 / 4;
+        }
+
+        &__4 {
+            grid-column: 4 / 5;
+        }
+
+        &__5 {
+            grid-column: 5 / 6;
+            @media only screen and (max-width: $bp-medium) {
+                display: none;
+            }
+        }
+
+        &__6 {
+            grid-column: 6 / 7;
+            @media only screen and (max-width: $bp-medium) {
+                display: none;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,27 @@
+.home__image {
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+    overflow: hidden;
+    padding: 14rem 0;
+ 
+    @media only screen and (max-width: $bp-medium) {   
+        grid-column: 3 / 4;
+        padding: 0;
+    }
+}
+
+.home__img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &__main {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        @media only screen and (max-width: $bp-medium) {   
+            filter: opacity(.1);
+        }
+    }
+}
